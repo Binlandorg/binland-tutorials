@@ -1,0 +1,158 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: black;
+
+    .container {
+		display: flex;
+		flex-direction: column;
+
+        header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			display: flex;
+			padding: 1rem;
+			color: white;
+			width: 100%;
+			justify-content: space-between;
+
+			.features {
+				display: flex;
+				gap: 1rem;
+
+				.active {
+					position: relative;
+
+					&::after {
+						content: "";
+						width: 100%;
+						height: 2px;
+						background-color: white;
+						bottom: -7px;
+						left: 0;
+						position: absolute;
+					}
+				}
+			}
+		}
+
+        .video {
+			width: 100%;
+            height: 100vh;
+            display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+            color: white;
+
+            video {
+				width: 100%;
+				height: 100%;
+                aspect-ratio: 9/16;
+			}
+
+            .info {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 90%;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+    
+            .actions {
+                position: absolute;
+                font-size: 0.7rem;
+                font-weight: 300;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 1rem;
+    
+                & > div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2rem;
+                    align-items: center;
+    
+                    & i {
+                        font-size: 1.3rem;
+                    }
+                }
+    
+                .profile{
+                    --var-profile-size: 2rem;
+                    --var-follow-size: 1.2rem;
+                    width: var(--var-profile-size);
+                    height: var(--var-profile-size);
+                    position: relative;
+                    outline: 3px solid white;
+                    outline-offset: -1px;
+                    border-radius: 100%;
+    
+                    img {
+                        border-radius: var(--var-profile-size);
+                        width: 100%;
+                        height: 100%;
+                    }
+    
+                    &::after {
+                        content: "+";
+                        width: var(--var-follow-size);
+                        height: var(--var-follow-size);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: var(--var-follow-size);
+                        position: absolute;
+                        background-color: red;
+                        top: calc(var(--var-profile-size) - (var(--var-follow-size) / 2));
+                        left: calc((--var-profile-size - var(--var-follow-size)) / 2);
+                        font-size: 1rem;
+                    }
+                }
+    
+                .music {
+                    --var-music-size: 2rem;
+                    border-radius: var(--var-music-size);
+                    width: var(--var-music-size);
+                    height: var(--var-music-size);
+                    overflow: hidden;
+                    animation: rotatekey 10s linear infinite;
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+		}
+
+        .limit {
+			width: 100%;
+			height: 100vh;
+		}
+
+	}
+}
+
+@keyframes rotatekey {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

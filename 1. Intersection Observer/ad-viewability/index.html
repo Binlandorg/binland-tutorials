@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Viewability Metrics</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Métricas de Visibilidad con Intersection Observer</h1>
+        <span>Home > Blog > Métricas de Visibilidad</span>
+        <div class="section">
+            <h2>¿Qué es el Intersection Observer?</h2>
+            <p>
+                El Intersection Observer es una API de JavaScript diseñada para
+                observar los cambios en la intersección de un elemento con un
+                contenedor o con el viewport del navegador. Su principal ventaja es
+                que permite gestionar eventos relacionados con la visibilidad de
+                elementos en pantalla de manera eficiente y sin recurrir al costoso
+                monitoreo continuo, como los listeners de scroll. Esta API resulta
+                especialmente útil en aplicaciones modernas donde se prioriza el
+                rendimiento, como el lazy loading de imágenes, la carga diferida de
+                contenido o la animación al desplazarse por la página.
+            </p>
+        </div>
+        <div class="section">
+            <h2>Cómo Funciona el Intersection Observer</h2>
+            <p>
+                El Intersection Observer detecta cuándo un elemento objetivo (target)
+                entra o sale del área visible definida por un contenedor (root). Para
+                usarlo, primero se crea una instancia del observador con un callback
+                que se ejecutará cuando cambie el estado de intersección. Se puede
+                configurar el observador utilizando opciones como el margen del
+                contenedor (rootMargin) o el umbral de intersección (threshold). Esto
+                permite establecer condiciones específicas sobre cuándo y cómo
+                disparar los eventos, ajustándose a diversas necesidades.
+            </p>
+        </div>
+        <div class="section ad">
+            <img src="src/ad.png" />
+        </div>
+        <div class="section">
+            <h2>Principales Casos de Uso</h2>
+            <p>
+                Uno de los casos más comunes del Intersection Observer es el lazy
+                loading de imágenes, donde las imágenes solo se cargan cuando están a
+                punto de aparecer en el viewport, reduciendo el tiempo de carga
+                inicial de la página. También se utiliza en la implementación de
+                animaciones que se activan al hacer scroll, en la carga dinámica de
+                contenido (como en listas infinitas) o para monitorear la visibilidad
+                de anuncios publicitarios y medir impresiones. Su capacidad para
+                trabajar sin afectar el rendimiento del scroll lo convierte en una
+                herramienta poderosa.
+            </p>
+        </div>
+        <div class="section">
+            <h2>Ventajas y Limitaciones</h2>
+            <p>
+                El Intersection Observer es altamente eficiente porque descarga al
+                navegador del manejo manual de eventos de scroll, optimizando el
+                rendimiento y reduciendo los problemas de jank (interrupciones en la
+                fluidez de la animación). Además, es compatible con una amplia gama de
+                navegadores modernos. Sin embargo, tiene limitaciones, como la falta
+                de soporte nativo en navegadores antiguos, lo que podría requerir
+                polyfills. Además, en algunos casos específicos, puede ser menos
+                flexible en comparación con soluciones personalizadas que monitorean
+                intersecciones más complejas.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
